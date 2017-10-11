@@ -11,8 +11,9 @@ class mysql::server::service {
 
   file { $mysql::params::log_error:
     ensure => present,
+    mode   => '0640',
     owner  => 'mysql',
-    group  => 'mysql',
+    group  => 'log',
   }
 
   service { 'mysqld':
